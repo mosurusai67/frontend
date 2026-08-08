@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        /*
+        synchronous code
+        which executes line by line
+
+        asynchonous
+        which  executes parallely which takes time
+        -api calls,settimeout,setinterval, promises,async await
+        1.event loop mechanism
+        2.callstack
+       3. event loop
+
+        */
+        /*console.log('first')
+
+        setTimeout(()=>{
+            console.log('second')
+        },1000000)
+
+        console.log('third')
+        promises:it represents the eventual completion or failure of an asynchronus operation
+
+        1.pending
+        2.success
+       3. failure
+        creating a promises
+       let prom=new promise((res,rej)=>{
+        val=10
+        if(val==10){
+            rej('promise.is.resolved')
+        }else{
+            rej('promise.is.resolved')
+        }
+ })
+ //consuming a promise
+let prom=new Promise((res,rej)=>{
+          val = 100
+          if(val == 10){
+            res('promise is resolved')
+        }else{
+            rej('promise is rejected')
+        }
+         })
+
+        prom.then((result)=>console.log(result))
+        .catch((error)=>console.log(error))
+        
+        async function.getprom(){
+        //await pauses an execute in until the promise is settled
+            let data=await.promc
+            onsole.log(data)
+        }
+        getprom()
+
+        fetch(url,httpmethod)
+        fetch is used to make network  request(apicall)
+        fetch returns.Promise
+
+        1)then catch
+        2)async await*/
+        let prom=fetch('https://fakestoreapi.com/products')
+
+        prom.then((data)=>data.json())
+       .then((finaldata)=>console.log(finaldata))
+       .catch((error)=>console.log(error))
+
+       async function getdata(){
+       let data=await fetch('https://fakestoreapi.com/products')
+       let finaldata=await data.json()
+       console.log(finaldata)
+       }
+       getdata()
+
+        
+        
+    </script>
+</body>
+</html>
